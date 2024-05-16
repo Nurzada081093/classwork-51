@@ -32,8 +32,12 @@ const App = () => {
 
   return (
       <>
-         <Person name={people[0].name} age={people[0].age} />
-         <Person name={people[1].name} age={people[1].age} />
+          {people.map((person, index) => (
+              <Person key={index + person.name} name={person.name} age={person.age} />
+          ))}
+
+         {/*<Person name={people[0].name} age={people[0].age} />*/}
+         {/*<Person name={people[1].name} age={people[1].age} />*/}
           <button onClick={changeNameForFirstPerson}>Change name for first person</button>
       </>
   )
